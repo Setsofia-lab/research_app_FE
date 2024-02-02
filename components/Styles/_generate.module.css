@@ -1,0 +1,29 @@
+.generate__card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.generate__header {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.generate__input input {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.generate__textarea textarea {
+    font-size: 13px;
+    margin-top: 5px;
+
+}
+
+.generate__btn {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.generated__flex {
+    border: 2px solid #eee;
+    border-radius: 5px !important;
+}
