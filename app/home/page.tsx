@@ -147,11 +147,11 @@ function page() {
         <Box mb={30} mt={50}>
           <Text fw="500">All features</Text>
 
-          <Flex justify="center" wrap="wrap" gap={20} mt={20}>
-            <Flex gap={10} wrap="wrap">
-              <Each
-                of={features}
-                render={(items: { label: string }, index: number) => (
+          <Flex justify="flex-start" direction="row" wrap="wrap" gap={10} mt={20}>
+            <Each
+              of={features}
+              render={(items: { label: string }, index: number) => (
+                <Flex gap={10} wrap="wrap">
                   <Button
                     color="black"
                     className={classes.feature__btn}
@@ -161,9 +161,9 @@ function page() {
                   >
                     {items.label}
                   </Button>
-                )}
-              />
-            </Flex>
+                </Flex>
+              )}
+            />
           </Flex>
         </Box>
       </Container>

@@ -1,4 +1,3 @@
-'use client';
 import { AppShell, Burger, Button, Flex, Group, Skeleton, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Logo from './Logo';
@@ -7,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { nprogress } from '@mantine/nprogress';
 
 export function MainLayout({ children }: any) {
-  // const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle }] = useDisclosure();
   const navigate = useRouter();
 
   const SideList = [
@@ -28,11 +27,10 @@ export function MainLayout({ children }: any) {
       link: '',
     },
   ];
-  // navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
 
   return (
     <AppShell
-      navbar={{ width: 300, breakpoint: 'sm' }}
+      navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       padding="md"
       transitionDuration={500}
       transitionTimingFunction="ease"
