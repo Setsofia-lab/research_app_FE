@@ -20,10 +20,10 @@ function page() {
             <SideBarResults header="Visualizations Generator" />
           </Grid.Col>
           <Grid.Col span={{ lg: 8 }}>
-            <Flex direction="column" p={20} className={classes.generated__flex}>
-              <Card p={400} w={'100%'} withBorder>
-                <Flex align="center" direction="column" justify="center">
-                  <IconUpload size={50} />
+            <Flex direction="column" wrap="wrap" p={20} className={classes.generated__flex}>
+              <Card p={250} withBorder>
+                <Flex align="center" wrap="wrap" direction="column" justify="center">
+                  <IconUpload size={30} />
                   <Text mt={5}>Import</Text>
                 </Flex>
               </Card>

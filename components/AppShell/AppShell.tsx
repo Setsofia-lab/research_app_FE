@@ -1,3 +1,4 @@
+'use client';
 import { AppShell, Burger, Button, Flex, Group, Skeleton, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Logo from './Logo';
@@ -30,7 +31,7 @@ export function MainLayout({ children }: any) {
 
   return (
     <AppShell
-      navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+      navbar={{ width: { lg: 250, xl: 300 }, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       padding="md"
       transitionDuration={500}
       transitionTimingFunction="ease"
@@ -51,10 +52,10 @@ export function MainLayout({ children }: any) {
               variant="outline"
               color="black"
               radius={15}
-              size="lg"
+              size="md"
               fullWidth
             >
-              <Text size="sm" fw="normal">
+              <Text size="xs" fw="normal">
                 {results.label}
               </Text>
             </Button>
@@ -66,7 +67,7 @@ export function MainLayout({ children }: any) {
           color="black"
           size="lg"
           radius={15}
-          mt={300}
+          mt={'100%'}
           fullWidth
         >
           <Text size="sm" fw="normal">
@@ -81,13 +82,13 @@ export function MainLayout({ children }: any) {
       </AppShell.Navbar>
       <AppShell.Main>
         <Flex gap={10} justify="end">
-          <Button radius={15} bg="#D9D9D9" size="lg">
-            <Text size="sm" color="black">
+          <Button radius={15} bg="#D9D9D9" size="md">
+            <Text size="xs" color="black">
               Refer to earn
             </Text>
           </Button>
-          <Button radius={15} bg="#D9D9D9" size="lg">
-            <Text size="sm" color="black">
+          <Button radius={15} bg="#D9D9D9" size="md">
+            <Text size="xs" color="black">
               {' '}
               Upgrade plan
             </Text>

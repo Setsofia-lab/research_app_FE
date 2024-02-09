@@ -2,11 +2,14 @@
 
 * {
     box-sizing: border-box !important;
+    /* font-size: 14px !important; */
+
 
 }
 
 body {
     font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
 }
 
 .mantine-TextInput-error {

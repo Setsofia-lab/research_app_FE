@@ -17,7 +17,7 @@ function SideBar({ header }: Props) {
           <Text fw="bold" size="md">
             {header}
           </Text>
-          <Text mt={14} size="sm">
+          <Text mt={14} size="xs">
             There is no one who loves pain itself, who seeks after it and wants to have it, simply
             because it is pain..
           </Text>

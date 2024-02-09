@@ -28,7 +28,9 @@ function DisplayData() {
         of={list}
         render={(results: string) => (
           <Accordion.Item p={13} value={results}>
-            <Accordion.Control style={{ borderRadius: 33, top: 33 }}>{results}</Accordion.Control>
+            <Accordion.Control style={{ borderRadius: 33, top: 33 }}>
+              <Text size="sm">{results}</Text>
+            </Accordion.Control>
             <Accordion.Panel>Content</Accordion.Panel>
           </Accordion.Item>
         )}

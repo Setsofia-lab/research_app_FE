@@ -17,7 +17,7 @@
 }
 
 .auth_text {
-    font-size: 25px;
+    font-size: 19px !important;
     font-family: bold;
     background: #D9D9D9;
     font-family: 'Montserrat', sans-serif !important;
@@ -28,7 +28,7 @@
 }
 
 .auth_text2 {
-    font-size: 25px;
+    font-size: 19px !important;
     font-family: bold;
     background: #888888;
     font-family: 'Montserrat', sans-serif !important;

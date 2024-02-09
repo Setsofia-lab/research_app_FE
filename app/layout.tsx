@@ -1,9 +1,10 @@
 import '@mantine/core/styles.css';
 import React from 'react';
-import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { MantineProvider, ColorSchemeScript, useMantineTheme } from '@mantine/core';
 import { theme } from '../theme';
 import '../components/Styles/main.css';
 import { NavigationProgress } from '@mantine/nprogress';
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 export const metadata = {
   title: 'COPI COPI',
   description: 'Reasearch AI APP',
@@ -23,10 +24,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
 
       <body>
-        <MantineProvider theme={theme}>
-          <NavigationProgress color="gray" />
-          {children}
-        </MantineProvider>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   );

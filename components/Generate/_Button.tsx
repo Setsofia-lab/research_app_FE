@@ -13,7 +13,7 @@ function ButtonGenerate({ next, regenerate = { title: 'Regenerate', link: '' }, 
   return (
     <Flex gap={10} justify="right" mt={80}>
       <Link href={regenerate?.link}>
-        <Button radius={10} fw="normal" variant="outline">
+        <Button radius={10} fw="normal" size="sm" variant="outline">
           {regenerate.title}
         </Button>
       </Link>
