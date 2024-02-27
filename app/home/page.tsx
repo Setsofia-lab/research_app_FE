@@ -78,7 +78,7 @@ function page() {
   const select = (
     <Link href="/generate">
       <Button
-        color="#D9D9D9"
+        color="blue.0"
         style={{
           fontWeight: 500,
           borderTopLeftRadius: 0,
@@ -93,7 +93,9 @@ function page() {
           marginRight: rem(-80),
         }}
       >
-        Generate
+        <Text size="sm" c="white">
+          Generate
+        </Text>
       </Button>
     </Link>
   );
@@ -108,13 +110,13 @@ function page() {
           mt={80}
           justify="center"
         >
-          <Text className={classes.head} size="xl">
-            Lorem Ipsum
+          <Text c={'blue.0'} className={classes.head}>
+            Unlock the Future of Academic Writing with AI
           </Text>
           <Text className={classes.text}>
-            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-            velit Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-            adipisci velit....
+            CopiCopi AI is designed to revolutionize your academic writing experience. With
+            cutting-edge technology, it helps you create well-structured, original, and high-quality
+            research papers effortlessly
           </Text>
         </Flex>
         <Flex className={classes.home__flex} mt={30} align="center" justify="center">
@@ -133,7 +135,7 @@ function page() {
             render={(item: { label: string; icon: any }, index: number) => (
               <Flex gap={15} direction="column">
                 <Link className={classes.home__card__link} href="/generate">
-                  <Card className={classes.options__card} p={50} bg="#D9D9D9">
+                  <Card className={classes.options__card} p={50} bg="blue.0" opacity={0.6}>
                     {item.icon}
                   </Card>
                   <Text size="sm" mt={2} ta="center">

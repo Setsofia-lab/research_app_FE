@@ -1,3 +1,7 @@
+.sidenav__btns {
+    border: none;
+}
+
 .sidenav__btns:hover {
     border: 2px solid black;
 }

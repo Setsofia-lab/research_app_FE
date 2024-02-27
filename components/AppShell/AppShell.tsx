@@ -36,7 +36,7 @@ export function MainLayout({ children }: any) {
       transitionDuration={500}
       transitionTimingFunction="ease"
     >
-      <AppShell.Navbar bg="#D9D9D9" p="md">
+      <AppShell.Navbar bg="blue.0" p="md">
         <Logo />
 
         <Flex gap={10} direction="column" mt={50}>
@@ -50,12 +50,12 @@ export function MainLayout({ children }: any) {
               className={classes.sidenav__btns}
               key={index}
               variant="outline"
-              color="black"
+              bg="white"
               radius={15}
               size="md"
               fullWidth
             >
-              <Text size="xs" fw="normal">
+              <Text color="dark" size="xs" fw="normal">
                 {results.label}
               </Text>
             </Button>
@@ -67,6 +67,7 @@ export function MainLayout({ children }: any) {
           color="black"
           size="lg"
           radius={15}
+          bg={'white'}
           mt={'100%'}
           fullWidth
         >
@@ -82,16 +83,11 @@ export function MainLayout({ children }: any) {
       </AppShell.Navbar>
       <AppShell.Main>
         <Flex gap={10} justify="end">
-          <Button radius={15} bg="#D9D9D9" size="md">
-            <Text size="xs" color="black">
-              Refer to earn
-            </Text>
+          <Button radius={15} bg="blue.0" size="md">
+            <Text size="xs">Refer to earn</Text>
           </Button>
-          <Button radius={15} bg="#D9D9D9" size="md">
-            <Text size="xs" color="black">
-              {' '}
-              Upgrade plan
-            </Text>
+          <Button radius={15} bg="blue.0" size="md">
+            <Text size="xs"> Upgrade plan</Text>
           </Button>
         </Flex>
         {children}

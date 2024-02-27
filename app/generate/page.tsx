@@ -23,59 +23,59 @@ function page() {
             <Flex direction="column" p={20} className={classes.generated__flex}>
               <Card w={'100%'} p={100} withBorder>
                 <Flex align="center" direction="column" justify="center">
-                  <Text fs={'20px'}>**[Your University Logo]**</Text>
-                  <Text fs={'20px'} mt={30}>
+                  <Text size="sm">**[Your University Logo]**</Text>
+                  <Text size="sm" mt={30}>
                     **[University Name]**
                   </Text>
-                  <Text fs={'20px'} mt={30}>
+                  <Text size="sm" mt={30}>
                     **[Department of Your Major]**
                   </Text>
-                  <Text fs={'20px'} mt={30}>
+                  <Text size="sm" mt={30}>
                     **Title of Your Thesis**
                   </Text>
-                  <Text fs={'20px'} mt={30}>
+                  <Text size="sm" mt={30}>
                     *Subtitle (if applicable)*
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     A Thesis Submitted in Partial Fulfillment of the Requirements for the Degree of
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     **[Your Degree, e.g., Master of Science]**
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     By
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     **[Your Full Name]**
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     Advisor: **[Your Advisor's Full Name]**
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     [Month, e.g., May] [Year, e.g., 2023]
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     **[City, State (if applicable)]**
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     _ _ _ _
                   </Text>
 
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     Copyright © [Year, e.g., 2023]
                   </Text>
                   <Text>by</Text>
-                  <Text ta="center" fs={'20px'}>
+                  <Text ta="center" size="sm">
                     [Your Full Name]
                   </Text>
-                  <Text ta="center" fs={'20px'} mt={30}>
+                  <Text ta="center" size="sm" mt={30}>
                     All Rights Reserved
                   </Text>
                 </Flex>
               </Card>
               <Flex justify="center" direction="column" align="center" mt={50}>
                 <Loader color="#000000" />
-                <Text>Generating</Text>
+                <Text size="sm">Generating</Text>
               </Flex>
               <ButtonGenerate
                 regenerate={{ title: 'Regenerate', link: '#' }}
