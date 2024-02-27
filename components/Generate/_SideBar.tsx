@@ -76,7 +76,7 @@ function SideBar({ header }: Props) {
           />
         </Flex>
         <Flex mt={60} mb={60}>
-          <Button bg="#888888" className={classes.generate__btn} size="md" fullWidth>
+          <Button bg="blue.0" className={classes.generate__btn} size="md" fullWidth>
             Generate
           </Button>
         </Flex>

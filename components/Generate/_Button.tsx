@@ -13,13 +13,13 @@ function ButtonGenerate({ next, regenerate = { title: 'Regenerate', link: '' }, 
   return (
     <Flex gap={10} justify="right" mt={80}>
       <Link href={regenerate?.link}>
-        <Button radius={10} fw="normal" size="sm" variant="outline">
+        <Button color="blue.0" radius={10} fw="normal" size="sm" variant="outline">
           {regenerate.title}
         </Button>
       </Link>
 
       <Link href={edit?.disable ? '#' : edit?.link}>
-        <Button radius={10} fw="normal" variant="outline">
+        <Button color="blue.0" radius={10} fw="normal" variant="outline">
           {edit.title}
         </Button>
       </Link>
@@ -30,6 +30,7 @@ function ButtonGenerate({ next, regenerate = { title: 'Regenerate', link: '' }, 
           rightSection={<IconArrowRight size={17} />}
           radius={10}
           fw="normal"
+          color="blue.0"
           variant="outline"
         >
           {next.title}
