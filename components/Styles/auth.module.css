@@ -4,7 +4,7 @@
 }
 
 .auth_form input:focus {
-    outline: 1px solid rgb(0, 0, 0);
+    outline: 1px solid #2563EB;
     transition: 1 ease-out;
 
     /* Change the color to your desired color */

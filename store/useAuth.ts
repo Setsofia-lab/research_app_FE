@@ -17,7 +17,8 @@ export const useAuth = create<CartStore>((set) => ({
     set({ loading: true });
     try {
       const response = await instance.post('api/authenticate', data);
-      set({ authenticated: true });
+      console.log(response);
+      // set({ authenticated: true });
     } catch (err) {
       console.log(err);
     } finally {

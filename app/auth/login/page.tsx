@@ -5,7 +5,6 @@ import classes from '../../../components/Styles/auth.module.css';
 import Link from 'next/link';
 import { useForm } from '@mantine/form';
 import { useAuth } from '@/store/useAuth';
-import { redirect } from 'next/navigation';
 import Logo from '@/components/AppShell/Logo';
 
 type props = {
@@ -30,9 +29,9 @@ function page() {
     login({ ...e });
   };
 
-  if (authenticated) {
-    return redirect('/home');
-  }
+  // if (authenticated) {
+  //   return redirect('/home');
+  // }
   return (
     <Container className={classes.main__css} fluid>
       <Flex direction="row" mt={40} justify={'center'}>
@@ -63,8 +62,10 @@ function page() {
         </Grid>
         <Grid mt={15} justify="center">
           <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
-            <Button loading={loading} type="submit" radius={30} size="xl" color="gray.5" fullWidth>
-              <Text className={classes.auth__login__btn}>Login</Text>
+            <Button loading={loading} type="submit" radius={30} size="xl" color="#2563EB" fullWidth>
+              <Text size="sm" className={classes.auth__login__btn}>
+                Login
+              </Text>
             </Button>
           </Grid.Col>
         </Grid>

@@ -24,7 +24,11 @@ export async function POST(request: NextRequest) {
 
     const { email, password } = validation.data;
 
-    return NextResponse.json({ success: true, data: { email, password } });
+    return NextResponse.json({
+      success: true,
+      data: { email, password },
+      message: 'User authenticated',
+    });
   } catch (error) {
     console.error('Error processing the request:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
