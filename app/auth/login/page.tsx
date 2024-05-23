@@ -1,11 +1,12 @@
 'use client';
 import { Box, Button, Card, Container, Flex, Grid, Text, TextInput } from '@mantine/core';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from '../../../components/Styles/auth.module.css';
 import Link from 'next/link';
 import { useForm } from '@mantine/form';
 import { useAuth } from '@/store/useAuth';
 import Logo from '@/components/AppShell/Logo';
+import { redirect } from 'next/navigation';
 
 type props = {
   email: string;
@@ -13,7 +14,7 @@ type props = {
 };
 
 function page() {
-  const { login, loading, authenticated } = useAuth((state) => state);
+  const { login, authenticated, setToken, loading } = useAuth((state) => state);
   const form = useForm({
     initialValues: {
       email: '',
@@ -25,13 +26,25 @@ function page() {
     },
   });
 
-  const handleLogin = (e: props) => {
-    login({ ...e });
+  if (authenticated) {
+    return redirect('/home');
+  }
+
+  const handleLogin = async (e: props) => {
+    try {
+      const ress: any = await login({ ...e });
+      setToken({ token: ress.data.token, authenticated: true, loading: false });
+    } catch (er: any) {
+      console.log(er.response);
+      // console.log(er.response.data.non_field_errors[0]);
+      form.setFieldError('password', er.response.data.non_field_errors[0]);
+      setToken({ token: '', authenticated: false, loading: false });
+    }
   };
 
-  // if (authenticated) {
-  //   return redirect('/home');
-  // }
+  // useEffect(() => {
+  // },[])
+
   return (
     <Container className={classes.main__css} fluid>
       <Flex direction="row" mt={40} justify={'center'}>
@@ -39,28 +52,30 @@ function page() {
       </Flex>
       <form onSubmit={form.onSubmit((e: props) => handleLogin(e))} className={classes.auth_form}>
         <Grid p={0} m={0} justify="center">
-          <Grid.Col span={{ base: 12, md: 6, lg: 3.5 }}>
+          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
             <TextInput
               {...form.getInputProps('email')}
               placeholder="Email Address"
               radius={0}
+              className={classes.auth__f}
               size="xl"
             />
           </Grid.Col>
         </Grid>
-        <Grid p={0} m={0} mt={15} justify="center">
-          <Grid.Col span={{ base: 12, md: 6, lg: 3.5 }}>
+        <Grid p={0} m={0} mt={10} justify="center">
+          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
             <TextInput
               {...form.getInputProps('password')}
               placeholder="Password"
               radius={0}
+              type="password"
               className={classes.auth__f}
               size="xl"
             />
             <Text className={classes.auth__forgot__password}>Forgot password?</Text>
           </Grid.Col>
         </Grid>
-        <Grid mt={15} justify="center">
+        <Grid mt={10} justify="center">
           <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
             <Button loading={loading} type="submit" radius={30} size="xl" color="#2563EB" fullWidth>
               <Text size="sm" className={classes.auth__login__btn}>

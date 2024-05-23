@@ -5,7 +5,6 @@ const instance: AxiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    'x-api-key': process.env.NEXT_PUBLIC_API_PROXY_AUTH,
   },
 });
 

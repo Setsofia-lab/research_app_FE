@@ -5,10 +5,12 @@ import Logo from './Logo';
 import classes from '@/components/Styles/sidenav.module.css';
 import { useRouter } from 'next/navigation';
 import { nprogress } from '@mantine/nprogress';
+import { useAuth } from '@/store/useAuth';
 
 export function MainLayout({ children }: any) {
   const [opened, { toggle }] = useDisclosure();
   const navigate = useRouter();
+  const { setToken, logout } = useAuth((state) => state);
 
   const SideList = [
     {
@@ -28,6 +30,9 @@ export function MainLayout({ children }: any) {
       link: '',
     },
   ];
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <AppShell
@@ -66,6 +71,7 @@ export function MainLayout({ children }: any) {
           variant="outline"
           color="black"
           size="lg"
+          onClick={handleLogout}
           radius={15}
           bg={'white'}
           mt={'100%'}
