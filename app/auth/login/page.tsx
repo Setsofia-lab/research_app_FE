@@ -14,7 +14,7 @@ type props = {
 };
 
 function page() {
-  const { login, authenticated, setToken, loading } = useAuth((state) => state);
+  const { login, authenticated, setToken, loading, setLoader } = useAuth((state) => state);
   const form = useForm({
     initialValues: {
       email: '',
@@ -35,10 +35,12 @@ function page() {
       const ress: any = await login({ ...e });
       setToken({ token: ress.data.token, authenticated: true, loading: false });
     } catch (er: any) {
-      console.log(er.response);
+      // console.log(er.response);
       // console.log(er.response.data.non_field_errors[0]);
       form.setFieldError('password', er.response.data.non_field_errors[0]);
       setToken({ token: '', authenticated: false, loading: false });
+    } finally {
+      setLoader({ loading: false });
     }
   };
 

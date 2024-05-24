@@ -16,6 +16,7 @@ type CartStore = {
   token: string;
   setToken: (args: { token: string; authenticated?: boolean; loading: boolean }) => void;
   loading: boolean;
+  setLoader: (args: { loading: boolean }) => void;
   login: (args: { email: string; password: string }) => void;
   logout: () => void;
   signup: (args: SignUpProps) => void;
@@ -42,6 +43,9 @@ export const useAuth = create<CartStore>()(
         login: async (data) => {
           set({ loading: true });
           return instance.post('user/token/', data);
+        },
+        setLoader: ({ loading }) => {
+          set({ loading });
         },
         signup: async (data) => {
           return instance.post('user/create/', data);
